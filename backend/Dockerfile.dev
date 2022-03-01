@@ -1,0 +1,10 @@
+FROM node:14.14.0-alpine
+WORKDIR '/app'
+COPY ./package*.json ./
+COPY ./tsconfig.json ./
+RUN npm install
+RUN npm install -g nodemon
+COPY ./src ./src
+EXPOSE 2927
+CMD [ "npm", "run", "start:dev" ]
+

@@ -1,0 +1,10 @@
+.laptopsContainer {
+  padding: 30px 10px;
+}
+
+.laptops {
+  display: grid;
+  justify-items: center;
+  gap: 36px;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}

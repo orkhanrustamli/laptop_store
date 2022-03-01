@@ -1,0 +1,41 @@
+version: "3"
+services:
+    nginx:
+        depends_on:
+            - api
+            - client
+        restart: always
+        build:
+            dockerfile: Dockerfile.dev
+            context: ./nginx
+        ports:
+            - "8080:80"
+    mysqldb:
+        image: mysql:5.7
+        command: --default-authentication-plugin=mysql_native_password
+        environment:
+            - MYSQL_ROOT_PASSWORD=root
+            - MYSQL_USER=root
+            - MYSQL_DATABASE=laptop_store
+        ports:
+            - "3306:3306"
+    api:
+        depends_on:
+            - mysqldb
+        build:
+            dockerfile: Dockerfile.dev
+            context: ./backend
+        environment:
+            - MYSQLDB_PASSWORD=root
+            - MYSQLDB_USER=root
+            - MYSQLDB_DATABASE=laptop_store
+        volumes:
+            - /app/node_modules
+            - ./backend:/app
+    client:
+        build:
+            dockerfile: Dockerfile.dev
+            context: ./client
+        volumes:
+            - /app/node_modules
+            - ./client:/app

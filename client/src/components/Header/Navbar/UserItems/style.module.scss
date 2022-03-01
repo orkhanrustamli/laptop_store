@@ -1,0 +1,78 @@
+.userItems {
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  font-size: 1.4rem;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+
+  &:hover {
+    border-color: white;
+  }
+}
+
+.avatar {
+  height: 50px;
+  border-radius: 50%;
+}
+
+.profileItem {
+  position: relative;
+
+  &:hover .profileSubmenu {
+    visibility: visible;
+  }
+
+  .profileSubmenu {
+    visibility: hidden;
+    white-space: nowrap;
+    position: absolute;
+    top: 120%;
+    left: -100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 0;
+    background-color: white;
+    border-radius: 4px;
+    color: rgb(95, 95, 95);
+    box-shadow: 0 8px 24px rgba(140, 149, 159, 0.2);
+    transition: all 0.2s;
+    border: 1px solid #d0d7de;
+
+    span {
+      text-align: left;
+      padding: 0 10px 5px 10px;
+      cursor: auto;
+      font-size: 1rem;
+    }
+
+    span:last-of-type {
+      font-weight: bold;
+      border-bottom: 1px solid rgba(124, 124, 124, 0.719);
+      margin-bottom: 5px;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+
+      li {
+        width: 100%;
+        list-style: none;
+        padding: 5px 15px;
+        font-size: 1rem;
+
+        &:hover {
+          background-color: #71b280;
+          color: white;
+        }
+      }
+    }
+  }
+}

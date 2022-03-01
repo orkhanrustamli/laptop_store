@@ -1,0 +1,107 @@
+.pageContainer {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addLaptopFormContainer {
+  flex-grow: 1;
+  max-width: 600px;
+  padding: 45px 45px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 3px 10px -2px rgb(0 0 0 / 20%);
+}
+
+.addLaptopHeading {
+  color: #38a3a5;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.addLaptopForm {
+  button {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #38a3a5;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.2s ease-out;
+
+    &:hover {
+      background-color: #38a3a5ce;
+    }
+  }
+}
+
+.addLaptopInputRow {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.addLaptopInputGroup {
+  position: relative;
+  flex-grow: 1;
+
+  input {
+    width: 100%;
+    padding: 10px;
+    padding-left: 47.5px;
+    background-color: #f9f9f9;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    color: rgb(110, 110, 110);
+    outline: none;
+    transition: all 0.2s ease-out;
+
+    &::placeholder {
+      color: rgba(136, 136, 136, 0.74);
+    }
+
+    &:focus {
+      border-color: #38a3a5b0;
+      box-shadow: 0 0 4px #38a3a5;
+
+      & + span {
+        color: #38a3a5;
+
+        &::after {
+          border-color: #32a6a8;
+        }
+      }
+    }
+  }
+
+  span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 37.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(136, 136, 136, 0.74);
+    transition: all 0.2s ease-out;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      border-right: 1px solid rgba(136, 136, 136, 0.473);
+      right: 0;
+      top: 7px;
+      bottom: 7px;
+      transition: all 0.2s ease-out;
+    }
+  }
+}

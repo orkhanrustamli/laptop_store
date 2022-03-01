@@ -1,0 +1,14 @@
+.authItems {
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+  font-size: 1.5rem;
+  padding: 10px 15px;
+  line-height: 100%;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+
+  &:hover {
+    border-color: white;
+  }
+}
